@@ -2,6 +2,7 @@
 !.git/
 !.gitignore
 !images/
+*.spec
 
 # Arquivos de ambiente Python
 __pycache__/

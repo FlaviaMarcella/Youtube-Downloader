@@ -78,6 +78,9 @@ def build_executable(with_ffmpeg=False, optimized=False):
         "--workpath", os.path.join(project_root, "build"),
         "--windowed",
         "--onefile",
+        "--hidden-import=PIL",
+        "--hidden-import=yt_dlp",
+        "--hidden-import=customtkinter",
     ]
     
     # Adicionar dados (imagens)
