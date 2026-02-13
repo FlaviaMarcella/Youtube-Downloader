@@ -1,0 +1,33 @@
+# Pastas de playlists baixadas
+*/
+!.git/
+!.gitignore
+
+# Arquivos de ambiente Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ambientes virtuais
+venv/
+env/
+ENV/
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Arquivos de sistema
+.env.local
+.env.*.local
+
+# Dependências
+*.egg-info/
+dist/
+build/
