@@ -36,9 +36,7 @@ download:
 	python src/playlist_para_mp3.py "$(URL)"
 
 clean:
-	@echo [*] Limpando pastas de playlists...
-	@for /d %%D in (*) do (if /i not "%%D"==".git" rmdir /s /q "%%D" 2>nul)
-	@echo [✓] Limpeza concluída!
+	@python clean.py
 
 build:
 	@echo [*] Buildando executável...

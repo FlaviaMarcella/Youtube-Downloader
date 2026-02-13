@@ -59,6 +59,10 @@ def build_executable(with_ffmpeg=False, optimized=False):
         print("[*] Instalando PyInstaller...")
         subprocess.run([sys.executable, "-m", "pip", "install", "pyinstaller"], check=True)
     
+    # Instalar/atualizar dependências para o projeto
+    print("\n[*] Garantindo que todas as dependências estão instaladas...")
+    subprocess.run([sys.executable, "-m", "pip", "install", "-r", os.path.join(project_root, "requirements.txt")], check=True)
+    
     # Limpar builds anteriores
     for folder in ["build", "dist"]:
         folder_path = os.path.join(project_root, folder)
@@ -78,9 +82,15 @@ def build_executable(with_ffmpeg=False, optimized=False):
         "--workpath", os.path.join(project_root, "build"),
         "--windowed",
         "--onefile",
+        # Hidden imports para garantir inclusão
         "--hidden-import=PIL",
+        "--hidden-import=PIL.Image",
         "--hidden-import=yt_dlp",
         "--hidden-import=customtkinter",
+        # Coletar todas as dados e submodules
+        "--collect-all=PIL",
+        "--collect-all=customtkinter",
+        "--collect-submodules=yt_dlp",
     ]
     
     # Adicionar dados (imagens)
