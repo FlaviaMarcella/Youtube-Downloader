@@ -22,7 +22,7 @@ def build_executable(with_ffmpeg=False, optimized=False):
     project_root = os.path.dirname(script_dir)
     src_dir = script_dir
     gui_file = os.path.join(src_dir, "youtube_mp3_gui.py")
-    images_dir = os.path.join(src_dir, "images")
+    images_dir = os.path.join(project_root, "assets")
     
     # Verificar arquivos necessários
     if not os.path.exists(gui_file):
@@ -75,14 +75,14 @@ def build_executable(with_ffmpeg=False, optimized=False):
         sys.executable, "-m", "PyInstaller",
         "--name", "YouTube MP3 Downloader",
         "--distpath", os.path.join(project_root, "dist"),
-        "--buildpath", os.path.join(project_root, "build"),
+        "--workpath", os.path.join(project_root, "build"),
         "--windowed",
         "--onefile",
     ]
     
     # Adicionar dados (imagens)
     if os.path.exists(images_dir):
-        cmd.append(f"--add-data={images_dir}{os.pathsep}src/images")
+        cmd.append(f"--add-data={images_dir}{os.pathsep}images")
     
     # Adicionar FFmpeg se selecionado
     if with_ffmpeg:

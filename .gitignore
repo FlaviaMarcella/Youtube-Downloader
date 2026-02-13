@@ -1,6 +1,7 @@
 # Pastas de playlists baixadas
 !.git/
 !.gitignore
+!images/
 
 # Arquivos de ambiente Python
 __pycache__/

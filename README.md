@@ -70,7 +70,8 @@ make gui
 ```
 
 A interface gráfica oferece:
-- ✅ Logo do projeto para identificação
+- ✅ Banner visual no topo para identificação
+- ✅ Logo do projeto para melhor UX
 - ✅ Campo de entrada amigável para URL
 - ✅ Seleção de pasta de destino
 - ✅ Log detalhado do progresso
@@ -128,7 +129,7 @@ python src/build.py --optimized
 
 ```bash
 pip install pyinstaller
-pyinstaller --onefile --windowed --name "YouTube MP3 Downloader" --add-data "src/images:src/images" src/youtube_mp3_gui.py
+pyinstaller --onefile --windowed --name "YouTube MP3 Downloader" --add-data "assets:assets" src/youtube_mp3_gui.py
 ```
 
 ---
@@ -162,10 +163,11 @@ Youtube-Downloader/
 │   ├── youtube_mp3_gui.py       # Interface gráfica (GUI)
 │   ├── playlist_para_mp3.py     # Script CLI para download
 │   ├── ffmpeg_manager.py        # Gerenciador de FFmpeg
-│   ├── build.py                 # Script para criar executável
-│   └── images/
-│       ├── logo.png             # Logo do projeto
-│       └── ...
+│   └── build.py                 # Script para criar executável
+├── assets/
+│   ├── banner.png               # Banner do projeto
+│   ├── logo.png                 # Logo do projeto
+│   └── ...
 ├── README.md                     # Este arquivo
 ├── .gitignore                    # Configuração de exclusões do Git
 ├── Makefile                      # Automação de tarefas
